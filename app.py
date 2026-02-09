@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from utils.data_loader import find_similar_players
 
 st.set_page_config(
     page_title="PL Similarity Engine",
@@ -50,4 +51,14 @@ with col3:
     st.metric("xG", f"{player_data['xg']:.2f}")
     st.metric("Touches", f"{player_data['touches']}")
     
-    
+
+# Test function 1
+print("=== ALL PLAYERS ===")
+result1 = find_similar_players("Declan Rice", top_n=5)
+print(result1)
+print(type(result1))  # What type is this?
+
+# print("\n=== SAME ROLE ONLY ===")
+# result2 = similar_players("Declan Rice", pca_df, top_n=5)
+# print(result2)
+# print(type(result2))  # What type is this? 
