@@ -26,4 +26,5 @@ def find_similar_players(target_player, df, top_n=10):
     result['similarity'] = result['player'].map(similar)
     result = result.sort_values('similarity', ascending=False)
     
-    return result[['player', 'team', 'role_name', 'similarity']]
+    return result[['player', 'team_x', 'role_name', 'similarity']]
+
