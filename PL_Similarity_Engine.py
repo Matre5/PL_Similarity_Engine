@@ -11,7 +11,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.sidebar.success("⚽ PL Similarity Engine")
+st.sidebar.header("⚽ PL Similarity Engine", divider="blue")
 
 @st.cache_data
 def load_data():
@@ -25,9 +25,9 @@ def load_data():
 df = load_data()
 league_avg = df.mean(numeric_only=True)
 
-st.title("⚽ PL Similarity Engine")
+st.title("⚽ :blue[PL Similarity Engine]")
 
-col1, col2, col3 = st.columns([10, 0.2, 10])
+col1, col2, col3 = st.columns([15, 0.2, 10])
 
 with col1:
     
@@ -35,12 +35,6 @@ with col1:
         "Search for a player",
         options=sorted(df['player'].unique())
     )
-    # st.dataframe(df)
-
-    # player = selected_player.lower().replace(" ", "_")
-    
-    # player_id = "204480" 
-    # image_url = f"https://resources.premierleague.com/{player_id}.png"
 
     player_data = df[df['player']==selected_player].iloc[0]
 
@@ -52,8 +46,7 @@ with col1:
         st.image("assets/images/decs.png", caption=selected_player, width=200)
         st.metric("Role", player_data['role_name'])
         st.metric("Team", player_data['team_x'])
-        
-        
+             
         
     with cl2:
         radar_features = [
@@ -76,10 +69,6 @@ with col1:
         )
         st.plotly_chart(radar_fig, use_container_width=True)
         
-    # with cl3:
-    #     st.metric("Minutes", f"{player_data['minutes']:.0f}")
-    #     st.metric("xG", f"{player_data['xg']:.2f}")
-    #     st.metric("Touches", f"{player_data['touches']}")
         
 with col2:
     # Use st.markdown to inject HTML/CSS for the vertical line
