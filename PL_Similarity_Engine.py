@@ -42,7 +42,7 @@ with col1:
     cl1, cl2 = st.columns([1,2])
 
     with cl1:
-        st.image("assets/images/player_placeholder.svg", caption=selected_player, width=200)
+        st.image("assets/images/player_placeholder.svg", caption=selected_player, width=80, height=80)
         st.metric("Role", player_data['role_name'])
         st.metric("Team", player_data['team_x'])
              
