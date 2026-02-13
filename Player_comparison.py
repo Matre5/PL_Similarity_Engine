@@ -1,5 +1,4 @@
 import streamlit as st
-import time
 import pandas as pd
 from utils.visualisations import create_comparison_radar
 

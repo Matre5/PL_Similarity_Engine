@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 from utils.data_loader import find_similar_players
 from utils.visualisations import create_player_radar
-from st_click_detector import click_detector
 
 st.set_page_config(
     page_title="PL Similarity Engine",
