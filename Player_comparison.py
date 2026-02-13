@@ -54,13 +54,13 @@ with col3:
     
     st.image("assets/images/player_placeholder.svg", caption=player2, width=200)
     st.markdown("**Role**")
-    st.markdown(f"<span style='font-size:20px'>{player1_data['role_name']}</span>", unsafe_allow_html=True)
+    st.markdown(f"<span style='font-size:20px'>{player2_data['role_name']}</span>", unsafe_allow_html=True)
 
     st.markdown("**Team**")
-    st.markdown(f"<span style='font-size:20px'>{player1_data['team_x']}</span>", unsafe_allow_html=True)
+    st.markdown(f"<span style='font-size:20px'>{player2_data['team_x']}</span>", unsafe_allow_html=True)
     
     st.markdown("**Minutes**")
-    st.markdown(f"<span style='font-size:20px'>{player1_data['minutes']:.0f}</span>", unsafe_allow_html=True)
+    st.markdown(f"<span style='font-size:20px'>{player2_data['minutes']:.0f}</span>", unsafe_allow_html=True)
 
     
 with col2:
