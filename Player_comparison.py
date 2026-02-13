@@ -80,3 +80,51 @@ with col2:
         st.plotly_chart(fig, use_container_width=True)
     else:
         st.warning("⚠️ Please select two different players to compare")
+
+
+        
+st.divider()
+
+# Stats comparison table
+st.subheader("Detailed Stats Comparison", text_alignment="center")
+
+comparison_stats = {
+    'Metric': [
+        'Defensive 3rd %',
+        'Middle 3rd %',
+        'Attacking 3rd %',
+        'Penalty Area %',
+        'Tackles/90',
+        'Interceptions/90',
+        'Shots/90',
+        'xG/90'
+    ],
+    player1: [
+        f"{player1_data['touches_def_3rd_pct']:.1f}%",
+        f"{player1_data['touches_mid_3rd_pct']:.1f}%",
+        f"{player1_data['touches_att_3rd_pct']:.1f}%",
+        f"{player1_data['touches_att_pen_pct']:.1f}%",
+        f"{player1_data['tackles']:.2f}",
+        f"{player1_data['interceptions']:.2f}",
+        f"{player1_data['shots']:.2f}",
+        f"{player1_data['xg']:.2f}"
+    ],
+    player2: [
+        f"{player2_data['touches_def_3rd_pct']:.1f}%",
+        f"{player2_data['touches_mid_3rd_pct']:.1f}%",
+        f"{player2_data['touches_att_3rd_pct']:.1f}%",
+        f"{player2_data['touches_att_pen_pct']:.1f}%",
+        f"{player2_data['tackles']:.2f}",
+        f"{player2_data['interceptions']:.2f}",
+        f"{player2_data['shots']:.2f}",
+        f"{player2_data['xg']:.2f}"
+    ]
+}
+
+comparison_df = pd.DataFrame(comparison_stats)
+
+st.dataframe(
+    comparison_df,
+    hide_index=True,
+    use_container_width=True
+)
