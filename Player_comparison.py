@@ -32,9 +32,14 @@ with col1:
     player1_data = df[df['player']==player1].iloc[0]
     
     st.image("assets/images/player_placeholder.svg", caption=player1, width=200)
-    st.metric("Role", player1_data['role_name'])
-    st.metric("Team", player1_data['team_x'])
-    st.metric("Minutes", f"{player1_data['minutes']:.0f}")
+    st.markdown("**Role**")
+    st.markdown(f"<span style='font-size:18px'>{player1_data['role_name']}</span>", unsafe_allow_html=True)
+
+    st.markdown("**Team**")
+    st.markdown(f"<span style='font-size:18px'>{player1_data['team_x']}</span>", unsafe_allow_html=True)
+    
+    st.markdown("**Minutes**")
+    st.markdown(f"<span style='font-size:20px'>{player1_data['minutes']:.0f}</span>", unsafe_allow_html=True)
         
  
 with col3:
@@ -48,9 +53,15 @@ with col3:
     player2_data = df[df['player']==player2].iloc[0]
     
     st.image("assets/images/player_placeholder.svg", caption=player2, width=200)
-    st.metric("Role", player2_data['role_name'])
-    st.metric("Team", player2_data['team_x'])
-    st.metric("Minutes", f"{player2_data['minutes']:.0f}")
+    st.markdown("**Role**")
+    st.markdown(f"<span style='font-size:20px'>{player1_data['role_name']}</span>", unsafe_allow_html=True)
+
+    st.markdown("**Team**")
+    st.markdown(f"<span style='font-size:20px'>{player1_data['team_x']}</span>", unsafe_allow_html=True)
+    
+    st.markdown("**Minutes**")
+    st.markdown(f"<span style='font-size:20px'>{player1_data['minutes']:.0f}</span>", unsafe_allow_html=True)
+
     
 with col2:
     

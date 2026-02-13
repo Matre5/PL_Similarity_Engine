@@ -38,13 +38,15 @@ with col1:
     player_data = df[df['player']==selected_player].iloc[0]
 
     st.divider()
-
     cl1, cl2 = st.columns([1,2])
 
     with cl1:
-        st.image("assets/images/player_placeholder.svg", caption=selected_player, width=80)
-        st.metric("Role", player_data['role_name'])
-        st.metric("Team", player_data['team_x'])
+        st.image("assets/images/player_placeholder.svg", caption=selected_player, width=200)
+        st.markdown("**Role**")
+        st.markdown(f"<span style='font-size:20px'>{player_data['role_name']}</span>", unsafe_allow_html=True)
+
+        st.markdown("**Team**")
+        st.markdown(f"<span style='font-size:20px'>{player_data['team_x']}</span>", unsafe_allow_html=True)
              
         
     with cl2:
