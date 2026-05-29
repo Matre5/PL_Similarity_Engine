@@ -2,7 +2,7 @@
 
 An interactive web app that finds tactically similar players in the Premier League using unsupervised machine learning.
 
-🔗 **[Live App](https://your-streamlit-url.streamlit.app)**
+🔗 **[Live App](https://similarityeng.streamlit.app/)**
 
 ---
 
